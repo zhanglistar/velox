@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-add_library(velox_all_link STATIC)
+add_library(velox_all_link INTERFACE)
 target_link_libraries(
   velox_all_link
   velox_codegen_code_generator
