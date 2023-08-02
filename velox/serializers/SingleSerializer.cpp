@@ -165,7 +165,7 @@ VectorPtr readFlatVector(
   std::vector<BufferPtr> stringBuffers;
   stringBuffers.reserve(stringBuffersSize);
   for (int32_t i = 0; i < stringBuffersSize; i++) {
-    stringBuffers.emplace_back(std::move(readBuffer(source, pool)));
+    stringBuffers.emplace_back(readBuffer(source, pool));
   }
   using T = typename TypeTraits<kind>::NativeType;
   return std::make_shared<FlatVector<T>>(
