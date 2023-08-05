@@ -129,7 +129,7 @@ class LazyVector : public BaseVector {
             BufferPtr(nullptr),
             size),
         loader_(std::move(loader)) {
-          std::cout << boost::stacktrace::stacktrace() << std::endl;
+          std::cout << "xxx lazyvector: " << boost::stacktrace::stacktrace() << std::endl;
         }
 
   void reset(std::unique_ptr<VectorLoader>&& loader, vector_size_t size) {
