@@ -15,8 +15,10 @@
  */
 #pragma once
 
+#include <iostream>
 #include "velox/vector/DecodedVector.h"
 #include "velox/vector/SimpleVector.h"
+#include <boost/stacktrace.hpp>
 
 namespace facebook::velox {
 
@@ -126,7 +128,9 @@ class LazyVector : public BaseVector {
             VectorEncoding::Simple::LAZY,
             BufferPtr(nullptr),
             size),
-        loader_(std::move(loader)) {}
+        loader_(std::move(loader)) {
+          std::cout << boost::stacktrace::stacktrace() << std::endl;
+        }
 
   void reset(std::unique_ptr<VectorLoader>&& loader, vector_size_t size) {
     BaseVector::length_ = size;
