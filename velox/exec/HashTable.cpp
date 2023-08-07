@@ -1267,6 +1267,7 @@ template <bool ignoreNullKeys>
 void HashTable<ignoreNullKeys>::decideHashMode(
     int32_t numNew,
     bool disableRangeArrayHash) {
+  std::cout << "xxx hashmode" << hashMode_ << std::endl;
   std::vector<uint64_t> rangeSizes(hashers_.size());
   std::vector<uint64_t> distinctSizes(hashers_.size());
   std::vector<bool> useRange(hashers_.size());
